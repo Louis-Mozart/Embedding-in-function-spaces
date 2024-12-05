@@ -30,25 +30,24 @@ def get_default_arguments(description=None):
     # Model related arguments
     parser.add_argument("--model", type=str,
                         default="Keci",
-                        choices=["ComplEx", "Keci", "ConEx", "AConEx", "ConvQ", "AConvQ", "ConvO", "AConvO", "QMult",
-                                 "OMult", "Shallom", "DistMult", "TransE", "DeCaL",
-                                 "BytE",
+                        choices=["ComplEx", "ConvQ", "AConvQ", "ConvO", "AConvO", "QMult",
+                                 "OMult", "DistMult", "TransE", "LFMult", "FMult", "PolyMult", "LFMult1"
                                  "Pykeen_MuRE", "Pykeen_QuatE", "Pykeen_DistMult", "Pykeen_BoxE", "Pykeen_CP",
                                  "Pykeen_HolE", "Pykeen_ProjE", "Pykeen_RotatE",
                                  "Pykeen_TransE", "Pykeen_TransF", "Pykeen_TransH",
-                                 "Pykeen_TransR", "Pykeen_TuckER", "Pykeen_ComplEx","LFMult"],
+                                 "Pykeen_TransR", "Pykeen_TuckER", "Pykeen_ComplEx"],
                         help="Available knowledge graph embedding models. "
                              "To use other knowledge graph embedding models available in python, e.g.,"
                              "**Pykeen_BoxE** and add this into choices")
     parser.add_argument('--optim', type=str, default='Adam',
                         help='An optimizer',
                         choices=['Adam', 'AdamW', 'SGD',"NAdam", "Adagrad", "ASGD"])
-    parser.add_argument('--embedding_dim', type=int, default=16,
+    parser.add_argument('--embedding_dim', type=int, default=32,
                         help='Number of dimensions for an embedding vector. ')
-    parser.add_argument("--num_epochs", type=int, default=250, help='Number of epochs for training. ')
+    parser.add_argument("--num_epochs", type=int, default=500, help='Number of epochs for training. ')
     parser.add_argument('--batch_size', type=int, default=1024,
                         help='Mini batch size. If None, automatic batch finder is applied')
-    parser.add_argument("--lr", type=float, default=0.1)
+    parser.add_argument("--lr", type=float, default=0.02)
     parser.add_argument('--callbacks', type=json.loads,
                         default={},
                         help='{"PPE":{ "last_percent_to_consider": 10}}'
@@ -56,7 +55,7 @@ def get_default_arguments(description=None):
     parser.add_argument("--trainer", type=str, default='PL',
                         choices=['torchCPUTrainer', 'PL', 'torchDDP'],
                         help='PL (pytorch lightning trainer), torchDDP (custom ddp), torchCPUTrainer (custom cpu only)')
-    parser.add_argument('--scoring_technique', default="KvsAll",
+    parser.add_argument('--scoring_technique', default="NegSample",
                         help="Training technique for knowledge graph embedding model",
                         choices=["AllvsAll", "KvsAll", "1vsAll", "NegSample", "KvsSample"])
     parser.add_argument('--neg_ratio', type=int, default=50,
