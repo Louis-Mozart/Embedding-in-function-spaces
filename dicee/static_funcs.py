@@ -2,8 +2,8 @@ import numpy as np
 import torch
 import datetime
 from typing import Tuple, List
-from .models import CMult, Pyke, DistMult, KeciBase, Keci, TransE, DeCaL,\
-    ComplEx, AConEx, AConvO, AConvQ, ConvQ, ConvO, ConEx, QMult, OMult, Shallom, LFMult
+from .models import CMult, Pyke, DistMult, KeciBase, Keci, TransE,\
+    ComplEx, ConvQ, ConvO, ConEx, QMult, OMult, LFMult, FMult, PolyMult, LFMult1
 from .models.pykeen_models import PykeenKGE
 from .models.transformers import BytE
 import time
@@ -421,6 +421,15 @@ def intialize_model(args: dict,verbose=0) -> Tuple[object, str]:
     elif model_name == 'DeCaL':
         model =DeCaL(args=args)
         form_of_labelling = 'EntityPrediction'
+    elif model_name == 'FMult':
+        model =FMult(args=args)
+        form_of_labelling = 'EntityPrediction'
+    elif model_name == 'PolyMult':
+        model =PolyMult(args=args)
+        form_of_labelling = 'EntityPrediction'
+    elif model_name == 'LFMult1':
+        model =LFMult1(args=args)
+        form_of_labelling = 'EntityPrediction'
     else:
         raise ValueError(f"--model_name: {model_name} is not found.")
     return model, form_of_labelling
@@ -624,19 +633,7 @@ def download_file(url, destination_folder="."):
         print(f"Failed to download: {url}")
 
 
-def download_files_from_url(base_url:str, destination_folder=".")->None:
-    """
-
-    Parameters
-    ----------
-    base_url: e.g. "https://files.dice-research.org/projects/DiceEmbeddings/KINSHIP-Keci-dim128-epoch256-KvsAll"
-
-    destination_folder: e.g. "KINSHIP-Keci-dim128-epoch256-KvsAll"
-
-    Returns
-    -------
-
-    """
+def download_files_from_url(base_url, destination_folder="."):
     # lazy import
     from bs4 import BeautifulSoup
 
@@ -651,8 +648,7 @@ def download_files_from_url(base_url:str, destination_folder=".")->None:
         hrefs = [i for i in hrefs if len(i) > 3 and "." in i]
         for file_url in hrefs:
             download_file(base_url + "/" + file_url, destination_folder)
-    else:
-        print("ERROR:", response.status_code)
+
 
 def download_pretrained_model(url: str) -> str:
     assert url[-1] != "/"
