@@ -1,7 +1,7 @@
 # functionnal Embeddings: Embeddings Knowledge Graph in function space
 
-Knowledge graph embedding has shown to be succesfull when using divisional algebras ($\mathbb{R}$, $\mathbb{C}$, $\mathbb{Q}$, etc..) as these space are useful to model complex relations and pattern in a KG dataset.  So far only vectors have been used to computed the ebeddings of KGs. This repository aim to extend this idea and
-consider another alternative which is function space. So we compute represent the embeddings of entities and relations as functions. First with polynomial functions then trigonometric and neural network function. Here we implemented three functional embedding model. The first called PolyMult embed using polynomial functions. The second, called LFMult1 embed using trigonometric function and the third called LFMult embed using Neural Networks. More details about technical details can be found [here](https://dl.acm.org/doi/10.1145/3627673.3679819)
+Knowledge graph embedding has shown to be successful when using divisional algebras ($\mathbb{R}$, $\mathbb{C}$, $\mathbb{Q}$, etc..) as these spaces are helpful to model complex relations and pattern in a KG dataset.  So far only vectors have been used to compute the embeddings of KGs. This repository aims to extend this idea and
+consider another alternative: function space. So we compute represent the embeddings of entities and relations as functions. First with polynomial functions then trigonometric and neural network functions. Here we implemented three functional embedding models. The first called PolyMult embed using polynomial functions. The second is called LFMult1 embed using trigonometric function and the third called LFMult embed using Neural Networks. Technical details can be found [here](https://dl.acm.org/doi/10.1145/3627673.3679819)
 
 
 ## Installation
