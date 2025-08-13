@@ -24,7 +24,10 @@ wget https://files.dice-research.org/datasets/dice-embeddings/KGs.zip --no-check
 ## Knowledge Graph Embedding Models
 <details> <summary> To see available Models</summary>
 
-1. TransE, DistMult, ComplEx, ConEx, QMult, OMult, ConvO, ConvQ, PolyMult, LFMult, FMult, LFMult1
+1. Translative models: ```TransE```, ```TransR```
+2. Multiplicative models: ```Distmult```, ```ComplEx```, ```QMult```, ```OMult```
+3. Convolutional models: ```ConEx```, ```ConvO```, ```ConvQ```
+4. Functional models: ```PolyMult```, ```LFMult```, ```FMult```, ```LFMult1```
 
 </details>
 
@@ -47,6 +50,7 @@ python3 run.py --model PolyMult --eval_model "train_val_test" --scoring_techniqu
 
 ### Embedding with trigonometric function:
 <details><summary> Click me! </summary>
+ 
 ```bash
 python3 run.py --model LFMult1 --eval_model "train_val_test" --scoring_technique NegSample --degree 1 --lr 0.02 --embedding_dim 32 --num_epochs 500 --neg_ratio 50 --optim Adam --batch_size 1024
 ```
