@@ -29,17 +29,21 @@ wget https://files.dice-research.org/datasets/dice-embeddings/KGs.zip --no-check
 </details>
 
 # How to use this repo?
-First, install all the necessary packages using: 
+
+<details> <summary> to install all the necessary packages using:</summary>
+ 
 ```bash
  pip install -r requirements.txt 
  ```
+</details>
 
 ### Embedding with polynomials: 
-To get the results obtained in the paper for the UMLS data, do:
+<details> <summary> To get the results obtained in the paper for the UMLS data, do:</summary>
 
 ```bash
 python3 run.py --model PolyMult --eval_model "train_val_test" --scoring_technique NegSample --degree 1 --lr 0.02 --embedding_dim 32 --num_epochs 500 --neg_ratio 50 --optim Adam --batch_size 1024
 ```
+</details>
 
 ### Embedding with trigonometric function:
 ```bash
