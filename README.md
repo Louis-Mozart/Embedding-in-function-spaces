@@ -33,7 +33,7 @@ wget https://files.dice-research.org/datasets/dice-embeddings/KGs.zip --no-check
 
 ## How to use this repo?
 
-<details> <summary> to install all the necessary packages using:</summary>
+<details> <summary> Install all the necessary packages using:</summary>
  
 ```bash
  pip install -r requirements.txt 
