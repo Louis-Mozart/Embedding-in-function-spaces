@@ -28,7 +28,7 @@ wget https://files.dice-research.org/datasets/dice-embeddings/KGs.zip --no-check
 
 </details>
 
-# How to use this repo?
+## How to use this repo?
 
 <details> <summary> to install all the necessary packages using:</summary>
  
@@ -46,10 +46,17 @@ python3 run.py --model PolyMult --eval_model "train_val_test" --scoring_techniqu
 </details>
 
 ### Embedding with trigonometric function:
+<details><summary> Click me! </summary>
 ```bash
 python3 run.py --model LFMult1 --eval_model "train_val_test" --scoring_technique NegSample --degree 1 --lr 0.02 --embedding_dim 32 --num_epochs 500 --neg_ratio 50 --optim Adam --batch_size 1024
 ```
+</details>
+
 ### Embedding with Neural Networks:
+<details><summary> Click me! </summary>
+
 ```bash
 python3 run.py --model LFMult1 --eval_model "train_val_test" --scoring_technique NegSample --degree 1 --lr 0.02 --embedding_dim 32 --num_epochs 500 --neg_ratio 50 --optim Adam --batch_size 1024
 ```
+</details>
+
