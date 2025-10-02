@@ -54,7 +54,7 @@ def get_default_arguments(description=None):
                              '"Perturb": {"level": "out", "ratio": 0.2, "method": "RN", "scaler": 0.3}')
     parser.add_argument("--trainer", type=str, default='PL',
                         choices=['torchCPUTrainer', 'PL', 'torchDDP'],
-                        help='PL (pytorch lightning trainer), torchDDP (custom ddp), torchCPUTrainer (custom cpu only)')
+                        help='PL (PyTorch Lightning trainer), torchDDP (custom ddp), torchCPUTrainer (custom cpu only)')
     parser.add_argument('--scoring_technique', default="NegSample",
                         help="Training technique for knowledge graph embedding model",
                         choices=["AllvsAll", "KvsAll", "1vsAll", "NegSample", "KvsSample"])
