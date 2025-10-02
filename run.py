@@ -3,7 +3,7 @@ from dicee.executer import Execute, ContinuousExecute
 import argparse
 
 def get_default_arguments(description=None):
-    """ Extends pytorch_lightning Trainer's arguments with ours """
+    """ Extends pytorch_lightning Trainer's arguments with ours. """
     # From "pytorch-lightning==1.6.4" to "lightning>=2.1.3",  'Trainer' has no attribute 'add_argparse_args'
     # parser = pl.Trainer.add_argparse_args(argparse.ArgumentParser(add_help=False))
     parser = argparse.ArgumentParser(add_help=False)
