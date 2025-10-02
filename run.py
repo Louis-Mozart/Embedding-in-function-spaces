@@ -90,7 +90,7 @@ def get_default_arguments(description=None):
     # Evaluation Related
     parser.add_argument('--num_folds_for_cv', type=int, default=0,
                         help='Number of folds in k-fold cross validation.'
-                             'If >2 ,no evaluation scenario is applied implies no evaluation.')
+                             'If >2 , no evaluation scenario is applied implies no evaluation.')
     parser.add_argument("--eval_model", type=str, default="train_val_test",
                         choices=["None", "train", "train_val", "train_val_test", "test"],
                         help='Evaluating link prediction performance on data splits. ')
@@ -113,7 +113,7 @@ def get_default_arguments(description=None):
                         help='Block size for BytE')
     parser.add_argument("--byte_pair_encoding",
                         action="store_true",
-                        help="Currently only avail. for KGE implemented within dice-embeddings.")
+                        help="Currently only available. for KGE implemented within dice-embeddings.")
     parser.add_argument("--adaptive_swa",
                         action="store_true",
                         help="Adaptive stochastic weight averaging")
