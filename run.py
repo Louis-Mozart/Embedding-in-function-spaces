@@ -8,7 +8,7 @@ def get_default_arguments(description=None):
     # parser = pl.Trainer.add_argparse_args(argparse.ArgumentParser(add_help=False))
     parser = argparse.ArgumentParser(add_help=False)
     # Default Trainer param https://pytorch-lightning.readthedocs.io/en/stable/common/trainer.html#methods
-    # Knowledge graph related arguments
+    # Knowledge graph-related arguments
     parser.add_argument("--dataset_dir", type=str, default="KGs/KINSHIP",
                         help="The path of a folder containing train.txt, and/or valid.txt and/or test.txt"
                              ",e.g., KGs/UMLS")
