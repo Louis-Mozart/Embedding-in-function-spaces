@@ -127,16 +127,5 @@ def get_default_arguments(description=None):
         return parser.parse_args()
     return parser.parse_args(description)
 
-# def main():
-
-#     args = get_default_arguments()
-#     if args.continual_learning:
-#         ContinuousExecute(args).continual_start()
-#     else:
-#         Execute(get_default_arguments()).start()
-
-# if __name__ == '__main__':
-#     main()
-
 if __name__ == '__main__':
     Execute(get_default_arguments()).start()
