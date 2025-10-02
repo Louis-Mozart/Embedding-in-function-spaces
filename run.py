@@ -27,7 +27,7 @@ def get_default_arguments(description=None):
     parser.add_argument("--backend", type=str, default="pandas",
                         choices=["pandas", "polars", "rdflib"],
                         help='Backend for loading, preprocessing, indexing input knowledge graph.')
-    # Model related arguments
+    # Model-related arguments
     parser.add_argument("--model", type=str,
                         default="Keci",
                         choices=["ComplEx", "ConvQ", "AConvQ", "ConvO", "AConvO", "QMult",
@@ -37,11 +37,11 @@ def get_default_arguments(description=None):
                                  "Pykeen_TransE", "Pykeen_TransF", "Pykeen_TransH",
                                  "Pykeen_TransR", "Pykeen_TuckER", "Pykeen_ComplEx"],
                         help="Available knowledge graph embedding models. "
-                             "To use other knowledge graph embedding models available in python, e.g.,"
+                             "To use other knowledge graph embedding models available in Python, e.g.,"
                              "**Pykeen_BoxE** and add this into choices")
     parser.add_argument('--optim', type=str, default='Adam',
                         help='An optimizer',
-                        choices=['Adam', 'AdamW', 'SGD',"NAdam", "Adagrad", "ASGD"])
+                        choices=['Adam', 'AdamW', 'SGD', "NAdam", "Adagrad", "ASGD"])
     parser.add_argument('--embedding_dim', type=int, default=32,
                         help='Number of dimensions for an embedding vector. ')
     parser.add_argument("--num_epochs", type=int, default=500, help='Number of epochs for training. ')
